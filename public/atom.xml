@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>fiss</title>
+    <subtitle>Software engineer. Notes on systems, product, and things that hold up.</subtitle>
+    <link rel="self" type="application/atom+xml" href="https://fiss.dev/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://fiss.dev"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2025-11-20T00:00:00+00:00</updated>
+    <id>https://fiss.dev/atom.xml</id>
+    <entry xml:lang="en">
+        <title>First post</title>
+        <published>2025-11-20T00:00:00+00:00</published>
+        <updated>2025-11-20T00:00:00+00:00</updated>
+        
+        <author>
+          <name>Unknown</name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://fiss.dev/writing/first-post/"/>
+        <id>https://fiss.dev/writing/first-post/</id>
+        
+        <content type="html" xml:base="https://fiss.dev/writing/first-post/">&lt;p&gt;The opening paragraph sets up the problem. Keep it short — the standfirst above
+has already told the reader what they&#39;re in for.&lt;/p&gt;
+&lt;h2 id=&quot;a-section-heading&quot;&gt;A section heading&lt;/h2&gt;
+&lt;p&gt;Body text runs at a comfortable measure. &lt;strong&gt;Bold&lt;/strong&gt; works, so does &lt;em&gt;italic&lt;/em&gt;, and
+&lt;code&gt;inline code&lt;/code&gt; sits in a tinted box. Links are &lt;a rel=&quot;external&quot; href=&quot;https://example.com&quot;&gt;underlined in the accent
+colour&lt;/a&gt;.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;A pull quote, should you want one. It takes a rule in the accent colour.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;a-smaller-heading&quot;&gt;A smaller heading&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;A list item&lt;/li&gt;
+&lt;li&gt;Another one&lt;/li&gt;
+&lt;li&gt;A third&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #CDD6F4; background-color: #1E1E2E;&quot; &gt;&lt;code data-lang=&quot;rust&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #CBA6F7;&quot;&gt;fn&lt;/span&gt;&lt;span style=&quot;color: #89B4FA;font-style: italic;&quot;&gt; main&lt;/span&gt;&lt;span style=&quot;color: #9399B2;&quot;&gt;() {&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #89B4FA;font-style: italic;&quot;&gt;    println!&lt;/span&gt;&lt;span style=&quot;color: #9399B2;&quot;&gt;(&lt;/span&gt;&lt;span style=&quot;color: #A6E3A1;&quot;&gt;&amp;quot;fenced code blocks are highlighted&amp;quot;&lt;/span&gt;&lt;span style=&quot;color: #9399B2;&quot;&gt;);&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #9399B2;&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;A closing paragraph. Delete all of this and write the actual post.&lt;/p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>A longer title, to see how a row behaves when it runs on</title>
+        <published>2025-08-04T00:00:00+00:00</published>
+        <updated>2025-08-04T00:00:00+00:00</updated>
+        
+        <author>
+          <name>Unknown</name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://fiss.dev/writing/a-longer-title-to-check-the-row/"/>
+        <id>https://fiss.dev/writing/a-longer-title-to-check-the-row/</id>
+        
+        <content type="html" xml:base="https://fiss.dev/writing/a-longer-title-to-check-the-row/">&lt;p&gt;Placeholder. This one exists so the index has a long title in it — that&#39;s where
+row layouts usually break.&lt;/p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Third entry</title>
+        <published>2025-03-12T00:00:00+00:00</published>
+        <updated>2025-03-12T00:00:00+00:00</updated>
+        
+        <author>
+          <name>Unknown</name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://fiss.dev/writing/third-entry/"/>
+        <id>https://fiss.dev/writing/third-entry/</id>
+        
+        <content type="html" xml:base="https://fiss.dev/writing/third-entry/">&lt;p&gt;Placeholder.&lt;/p&gt;
+</content>
+        
+    </entry>
+</feed>

@@ -1,0 +1,85 @@
+{% extends "base.html" %} {% block content %}
+<header class="hero">
+    <p class="hero-kicker">{{ config.extra.since }}</p>
+    <h1 class="hero-line">
+        {%- for chunk in config.extra.hero | split(pat="*") -%} {%- if
+        loop.index0 is odd -%}<em>{{ chunk }}</em>{%- else -%}{{ chunk }}{%-
+        endif -%} {%- endfor -%}
+    </h1>
+</header>
+
+<section class="sec">
+    {% set sec_num = "01" %}{% set sec_name = "Now" %}{% set sec_count = "" %}
+    {% include "partials/sec_head.html" %}
+    <div class="prose lede">{{ section.content | safe }}</div>
+</section>
+
+{% if config.extra.work %}
+<section class="sec">
+    {% set sec_num = "02" %}{% set sec_name = "Work" %}{% set sec_count =
+    config.extra.work | length %} {% include "partials/sec_head.html" %}
+    <ul class="list">
+        {% for job in config.extra.work %}
+        <li class="entry">
+            <span class="entry-main">
+                {% if job.url %}<a
+                    class="entry-name"
+                    href="{{ job.url | safe }}"
+                    >{{ job.company }}</a
+                >
+                {% else %}<span class="entry-name">{{ job.company }}</span>{%
+                endif %} {% if job.note %}<span class="entry-note"
+                    >({{ job.note }})</span
+                >{% endif %}
+                <span class="entry-role">{{ job.role }}</span>
+            </span>
+            <span class="entry-meta">{{ job.period }}</span>
+        </li>
+        {% for prev in job.sub | default(value=[]) %}
+        <li class="entry entry-sub">
+            <span class="entry-main">
+                <span class="entry-arrow">↳</span>
+                <span class="entry-role">{{ prev.role }}</span>
+            </span>
+            <span class="entry-meta">{{ prev.period }}</span>
+        </li>
+        {% endfor %} {% endfor %}
+    </ul>
+</section>
+{% endif %} {% set writing = get_section(path="writing/_index.md") %} {% if
+writing.pages %}
+<section class="sec">
+    {% set sec_num = "03" %}{% set sec_name = "Writing" %}{% set sec_count =
+    writing.pages | length %} {% include "partials/sec_head.html" %}
+    <ul class="list list-index">
+        {% for post in writing.pages %} {% include "partials/post_row.html" %}
+        {% endfor %}
+    </ul>
+</section>
+{% endif %} {% if config.extra.projects %}
+<section class="sec">
+    {% set sec_num = "04" %}{% set sec_name = "Projects" %}{% set sec_count =
+    config.extra.projects | length %} {% include "partials/sec_head.html" %}
+    <ul class="list list-index">
+        {% for p in config.extra.projects %}
+        <li class="entry">
+            {% if p.url %}
+            <a class="entry-link" href="{{ p.url | safe }}">
+                <span class="entry-year">{{ p.year }}</span>
+                <span class="entry-name">{{ p.name }}</span>
+                <span class="entry-blurb">{{ p.blurb }}</span>
+                <span class="entry-go">→</span>
+            </a>
+            {% else %}
+            <span class="entry-row">
+                <span class="entry-year">{{ p.year }}</span>
+                <span class="entry-name">{{ p.name }}</span>
+                <span class="entry-blurb">{{ p.blurb }}</span>
+                <span class="entry-go"></span>
+            </span>
+            {% endif %}
+        </li>
+        {% endfor %}
+    </ul>
+</section>
+{% endif %} {% endblock %}

@@ -1,12 +1,12 @@
-theme = "colorized"
-# The URL the site will be built for
 base_url = "https://fiss.dev"
 
-# Whether to automatically compile all Sass files in the sass directory
-compile_sass = false
+title = "fiss"
+description = "Software engineer. Notes on systems, product, and things that hold up."
 
-# Whether to build a search index to be used later on by a JavaScript library
+compile_sass = false
 build_search_index = false
+generate_feeds = true
+feed_filenames = ["atom.xml"]
 
 [markdown]
 
@@ -14,4 +14,61 @@ build_search_index = false
 theme = "catppuccin-mocha"
 
 [extra]
-# Put all your custom variables here
+# ---------------------------------------------------------------------------
+# Everything below is placeholder copy. Replace it; nothing here is wired to
+# anything else, except `name`, which the footer ASCII is generated from:
+#     python3 tools/ascii-wordmark.py <name> --html
+# ---------------------------------------------------------------------------
+
+name = "fiss"
+role = "Your role"
+since = "est. 20XX"
+
+# The word between *asterisks* is set in accent italic.
+hero = "A one-line statement, with *one word* that carries the accent."
+
+[[extra.links]]
+label = "email"
+url = "mailto:you@example.com"
+
+[[extra.links]]
+label = "github"
+url = "https://github.com/"
+
+[[extra.links]]
+label = "x"
+url = "https://x.com/"
+
+# ---- Work ----------------------------------------------------------------
+# Optional keys: `note` for a parent company, `url` to link the name,
+# and a `sub` array of {role, period} for earlier roles at the same place.
+
+[[extra.work]]
+company = "Current company"
+note = "parent"
+role = "Your title"
+period = "2025 —"
+
+[[extra.work]]
+company = "Previous company"
+role = "Your title"
+period = "2023 — 2025"
+
+[[extra.work]]
+company = "First company"
+role = "Your title"
+period = "2022 — 2023"
+
+# ---- Projects ------------------------------------------------------------
+
+[[extra.projects]]
+year = "2025"
+name = "Project name"
+blurb = "What it does, in one line"
+url = ""
+
+[[extra.projects]]
+year = "2024"
+name = "Another project"
+blurb = "What it does, in one line"
+url = ""

@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}{{ page.title }} — {{ config.title }}{% endblock %}
+{% block description %}{{ page.description | default(value=config.description) }}{% endblock %}
+
+{% block content %}
+<article class="article">
+  <p class="hero-kicker">
+    <a href="{{ config.base_url | safe }}">index</a>
+    <span class="foot-sep">/</span>
+    <time datetime="{{ page.date }}">{{ page.date | date(format='%b %d, %Y') }}</time>
+  </p>
+  <h1 class="article-title">{{ page.title }}</h1>
+  {% if page.description %}<p class="article-standfirst">{{ page.description }}</p>{% endif %}
+  <div class="prose">
+    {{ page.content | safe }}
+  </div>
+</article>
+{% endblock %}

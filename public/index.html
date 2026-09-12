@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>fiss</title>
+  <meta name="description" content="Software engineer. Notes on systems, product, and things that hold up.">
+  <link rel="canonical" href="https://fiss.dev/">
+
+  <script>
+    // Set the theme before first paint so there is no flash.
+    (function () {
+      try {
+        var t = localStorage.getItem('theme');
+        if (t) document.documentElement.dataset.theme = t;
+      } catch (e) {}
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="https://fiss.dev/css/main.css?h=102f53b699060f1a78bf">
+  
+  <link rel="alternate" type="application/atom+xml" title="fiss" href="https://fiss.dev/atom.xml">
+  
+</head>
+<body>
+  <div class="shell">
+
+    <aside class="rail">
+      <div class="rail-inner">
+        <a class="mark" href="https://fiss.dev"><span class="mark-chip"></span>fiss</a>
+        <p class="mark-role">Your role</p>
+
+        <nav class="rail-links">
+          
+          <a href="mailto:you@example.com" rel="me">email</a>
+          
+          <a href="https://github.com/" rel="me">github</a>
+          
+          <a href="https://x.com/" rel="me">x</a>
+          
+        </nav>
+
+        <button class="theme-toggle" type="button" aria-label="Toggle colour scheme" data-theme-toggle>
+          <span class="theme-dot"></span>
+        </button>
+
+        <div class="ascii" aria-hidden="true">
+<pre class="ascii-paper">          ....::
+      .........::-=+
+     .........:::-==+
+   ..........:::--=+*#%
+   ........:::--==++*#%
+  .......:::---==+**#%%%
+  :::::::---===++*#%%%%%
+  -------===++**##%%%%%%
+   ======+++**#%%%%%%%%
+   *+++***###%%%%%%%%%%
+     %#%%%%%%%%%%%%%%
+      %%%%%%%%%%%%%%
+          %%%%%%</pre>
+<pre class="ascii-ink">          @@%%##
+      @@@@@@@%%##*+=
+     @@@@@@@%%###*++=
+   @@@@@@@%%%###**+=-:.
+   @@@@%%%%###**++==-:.
+  %%%%%%%###***++=--:...
+  #######***+++==-:.....
+  *******+++==--::......
+   ++++++===--:........
+   -===---:::..........
+     .:..............
+      ..............
+          ......</pre>
+</div>
+
+      </div>
+    </aside>
+
+    <main class="main">
+      
+<header class="hero">
+    <p class="hero-kicker">est. 20XX</p>
+    <h1 class="hero-line">A one-line statement, with <em>one word</em> that carries the accent.</h1>
+</header>
+
+<section class="sec">
+    
+    <div class="sec-head">
+  <span class="sec-num">01</span>
+  <h2 class="sec-name">Now</h2>
+  <span class="sec-rule"></span>
+  
+</div>
+
+    <div class="prose lede"><p>First paragraph. Say who you are and what you work on. <strong>Bold</strong> and <a rel="external" href="https://example.com">links</a> both render inline, and so does <code>inline code</code>.</p>
+<p>Second paragraph. Two or three of these is about right before the page wants a section heading instead.</p>
+<p>Close with how to reach you — <a href="mailto:you@example.com">email</a>, or wherever you'd rather people found you.</p>
+</div>
+</section>
+
+
+<section class="sec">
+     <div class="sec-head">
+  <span class="sec-num">02</span>
+  <h2 class="sec-name">Work</h2>
+  <span class="sec-rule"></span>
+  <span class="sec-count">3</span>
+</div>
+
+    <ul class="list">
+        
+        <li class="entry">
+            <span class="entry-main">
+                <span class="entry-name">Current company</span> <span class="entry-note"
+                    >(parent)</span
+                >
+                <span class="entry-role">Your title</span>
+            </span>
+            <span class="entry-meta">2025 —</span>
+        </li>
+         
+        <li class="entry">
+            <span class="entry-main">
+                <span class="entry-name">Previous company</span> 
+                <span class="entry-role">Your title</span>
+            </span>
+            <span class="entry-meta">2023 — 2025</span>
+        </li>
+         
+        <li class="entry">
+            <span class="entry-main">
+                <span class="entry-name">First company</span> 
+                <span class="entry-role">Your title</span>
+            </span>
+            <span class="entry-meta">2022 — 2023</span>
+        </li>
+         
+    </ul>
+</section>
+  
+<section class="sec">
+     <div class="sec-head">
+  <span class="sec-num">03</span>
+  <h2 class="sec-name">Writing</h2>
+  <span class="sec-rule"></span>
+  <span class="sec-count">3</span>
+</div>
+
+    <ul class="list list-index">
+         <li class="entry">
+  <a class="entry-link" href="https://fiss.dev/writing/first-post/">
+    <span class="entry-date">Nov 2025</span>
+    <span class="entry-name">First post</span>
+    <span class="entry-blurb">What this one is about, in a line</span>
+    <span class="entry-go">→</span>
+  </a>
+</li>
+
+         <li class="entry">
+  <a class="entry-link" href="https://fiss.dev/writing/a-longer-title-to-check-the-row/">
+    <span class="entry-date">Aug 2025</span>
+    <span class="entry-name">A longer title, to see how a row behaves when it runs on</span>
+    <span class="entry-blurb">The date stays left, the summary stays right</span>
+    <span class="entry-go">→</span>
+  </a>
+</li>
+
+         <li class="entry">
+  <a class="entry-link" href="https://fiss.dev/writing/third-entry/">
+    <span class="entry-date">Mar 2025</span>
+    <span class="entry-name">Third entry</span>
+    <span class="entry-blurb">One line of summary</span>
+    <span class="entry-go">→</span>
+  </a>
+</li>
+
+        
+    </ul>
+</section>
+ 
+<section class="sec">
+     <div class="sec-head">
+  <span class="sec-num">04</span>
+  <h2 class="sec-name">Projects</h2>
+  <span class="sec-rule"></span>
+  <span class="sec-count">2</span>
+</div>
+
+    <ul class="list list-index">
+        
+        <li class="entry">
+            
+            <span class="entry-row">
+                <span class="entry-year">2025</span>
+                <span class="entry-name">Project name</span>
+                <span class="entry-blurb">What it does, in one line</span>
+                <span class="entry-go"></span>
+            </span>
+            
+        </li>
+        
+        <li class="entry">
+            
+            <span class="entry-row">
+                <span class="entry-year">2024</span>
+                <span class="entry-name">Another project</span>
+                <span class="entry-blurb">What it does, in one line</span>
+                <span class="entry-go"></span>
+            </span>
+            
+        </li>
+        
+    </ul>
+</section>
+ 
+      <footer class="foot">
+        <pre class="wordmark" aria-hidden="true">      <span class="o">######</span> <span class="o">####</span>
+    <span class="o">##</span><span class="b">######</span><span class="o">#</span><span class="b">####</span><span class="o">##</span>
+   <span class="o">##</span><span class="b">#######</span><span class="o">#</span><span class="b">####</span><span class="o">##</span>
+  <span class="o">##</span><span class="b">#####</span><span class="o">###</span> <span class="o">####</span>
+  <span class="o">##</span><span class="b">####</span><span class="o">##</span>   <span class="o">####</span>        <span class="o">####</span>           <span class="o">####</span>
+  <span class="o">##</span><span class="b">#####</span><span class="o">####</span><span class="b">####</span><span class="o">##</span>   <span class="o">###</span><span class="b">####</span><span class="o">###</span>     <span class="o">###</span><span class="b">####</span><span class="o">###</span>
+<span class="o">##</span><span class="b">##########</span><span class="o">#</span><span class="b">####</span><span class="o">##</span> <span class="o">##</span><span class="b">##########</span><span class="o">##</span> <span class="o">##</span><span class="b">##########</span><span class="o">##</span>
+  <span class="o">##</span><span class="b">#####</span><span class="o">####</span><span class="b">####</span><span class="o">####</span><span class="b">############</span><span class="o">###</span><span class="b">############</span><span class="o">##</span>
+  <span class="o">##</span><span class="b">####</span><span class="o">##</span> <span class="o">##</span><span class="b">####</span><span class="o">###</span><span class="b">#####</span><span class="o">####</span><span class="b">####</span><span class="o">##</span><span class="b">#####</span><span class="o">####</span><span class="b">####</span><span class="o">##</span>
+  <span class="o">##</span><span class="b">####</span><span class="o">##</span> <span class="o">##</span><span class="b">####</span><span class="o">###</span><span class="b">#####</span><span class="o">########</span> <span class="o">##</span><span class="b">####</span><span class="o">########</span>
+  <span class="o">##</span><span class="b">####</span><span class="o">##</span> <span class="o">##</span><span class="b">####</span><span class="o">####</span><span class="b">########</span><span class="o">###</span>  <span class="o">##</span><span class="b">########</span><span class="o">###</span>
+  <span class="o">##</span><span class="b">####</span><span class="o">##</span> <span class="o">##</span><span class="b">####</span><span class="o">##</span>  <span class="o">##</span><span class="b">#########</span><span class="o">##</span>  <span class="o">##</span><span class="b">#########</span><span class="o">##</span>
+  <span class="o">##</span><span class="b">####</span><span class="o">##</span> <span class="o">##</span><span class="b">####</span><span class="o">##</span>  <span class="o">#######</span><span class="b">#####</span><span class="o">##</span> <span class="o">#######</span><span class="b">#####</span><span class="o">##</span>
+  <span class="o">##</span><span class="b">####</span><span class="o">##</span> <span class="o">##</span><span class="b">####</span><span class="o">####</span><span class="b">###</span><span class="o">##</span> <span class="o">##</span><span class="b">####</span><span class="o">###</span><span class="b">###</span><span class="o">##</span> <span class="o">##</span><span class="b">####</span><span class="o">##</span>
+  <span class="o">##</span><span class="b">####</span><span class="o">##</span> <span class="o">##</span><span class="b">####</span><span class="o">###</span><span class="b">#####</span><span class="o">###</span><span class="b">#####</span><span class="o">##</span><span class="b">#####</span><span class="o">###</span><span class="b">#####</span><span class="o">##</span>
+  <span class="o">##</span><span class="b">####</span><span class="o">##</span> <span class="o">##</span><span class="b">####</span><span class="o">####</span><span class="b">###########</span><span class="o">####</span><span class="b">###########</span><span class="o">##</span>
+  <span class="o">##</span><span class="b">####</span><span class="o">##</span> <span class="o">##</span><span class="b">####</span><span class="o">##</span>  <span class="o">##</span><span class="b">#######</span><span class="o">##</span>    <span class="o">##</span><span class="b">#######</span><span class="o">##</span>
+    <span class="o">####</span>     <span class="o">####</span>      <span class="o">#######</span>        <span class="o">#######</span></pre>
+
+        <span>est. 20XX</span>
+        <span class="foot-sep">·</span>
+        <a href="https://fiss.dev/atom.xml">feed</a>
+      </footer>
+    </main>
+
+  </div>
+
+  <script>
+    (function () {
+      var btn = document.querySelector('[data-theme-toggle]');
+      if (!btn) return;
+      btn.addEventListener('click', function () {
+        var root = document.documentElement;
+        var current = root.dataset.theme
+          || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        var next = current === 'dark' ? 'light' : 'dark';
+        root.dataset.theme = next;
+        try { localStorage.setItem('theme', next); } catch (e) {}
+      });
+    })();
+  </script>
+</body>
+</html>

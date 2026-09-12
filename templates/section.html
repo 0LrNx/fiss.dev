@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}{{ section.title }} — {{ config.title }}{% endblock %}
+
+{% block content %}
+<header class="hero">
+  <p class="hero-kicker"><a href="{{ config.base_url | safe }}">index</a></p>
+  <h1 class="hero-line">{{ section.title }}</h1>
+</header>
+
+<section class="sec">
+  {% set sec_num = "01" %}{% set sec_name = "All posts" %}{% set sec_count = section.pages | length %}
+  {% include "partials/sec_head.html" %}
+  <ul class="list list-index">
+    {% for post in section.pages %}
+    {% include "partials/post_row.html" %}
+    {% endfor %}
+  </ul>
+</section>
+{% endblock %}

@@ -1,0 +1,8 @@
+<li class="entry">
+  <a class="entry-link" href="{{ post.permalink | safe }}">
+    <span class="entry-date">{{ post.date | date(format='%b %Y') }}</span>
+    <span class="entry-name">{{ post.title }}</span>
+    <span class="entry-blurb">{{ post.description | default(value="") }}</span>
+    <span class="entry-go">→</span>
+  </a>
+</li>

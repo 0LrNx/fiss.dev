@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}{{ config.title }}{% endblock %}</title>
+  <meta name="description" content="{% block description %}{{ config.description }}{% endblock %}">
+  <link rel="canonical" href="{{ current_url | default(value=config.base_url) | safe }}">
+
+  <script>
+    // Set the theme before first paint so there is no flash.
+    (function () {
+      try {
+        var t = localStorage.getItem('theme');
+        if (t) document.documentElement.dataset.theme = t;
+      } catch (e) {}
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="{{ get_url(path='css/main.css', cachebust=true) | safe }}">
+  {% if config.generate_feeds %}
+  <link rel="alternate" type="application/atom+xml" title="{{ config.title }}" href="{{ get_url(path='atom.xml') | safe }}">
+  {% endif %}
+</head>
+<body>
+  <div class="shell">
+
+    <aside class="rail">
+      <div class="rail-inner">
+        <a class="mark" href="{{ config.base_url | safe }}"><span class="mark-chip"></span>{{ config.extra.name }}</a>
+        <p class="mark-role">{{ config.extra.role }}</p>
+
+        <nav class="rail-links">
+          {% for link in config.extra.links %}
+          <a href="{{ link.url | safe }}" rel="me">{{ link.label }}</a>
+          {% endfor %}
+        </nav>
+
+        <button class="theme-toggle" type="button" aria-label="Toggle colour scheme" data-theme-toggle>
+          <span class="theme-dot"></span>
+        </button>
+
+        {% include "partials/ascii.html" %}
+      </div>
+    </aside>
+
+    <main class="main">
+      {% block content %}{% endblock %}
+      <footer class="foot">
+        {% include "partials/wordmark.html" %}
+        <span>{{ config.extra.since }}</span>
+        <span class="foot-sep">·</span>
+        <a href="{{ get_url(path='atom.xml') | safe }}">feed</a>
+      </footer>
+    </main>
+
+  </div>
+
+  <script>
+    (function () {
+      var btn = document.querySelector('[data-theme-toggle]');
+      if (!btn) return;
+      btn.addEventListener('click', function () {
+        var root = document.documentElement;
+        var current = root.dataset.theme
+          || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        var next = current === 'dark' ? 'light' : 'dark';
+        root.dataset.theme = next;
+        try { localStorage.setItem('theme', next); } catch (e) {}
+      });
+    })();
+  </script>
+</body>
+</html>

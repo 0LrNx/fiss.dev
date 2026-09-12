@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %}Not found — {{ config.title }}{% endblock %}
+{% block content %}
+<header class="hero">
+  <p class="hero-kicker">404</p>
+  <h1 class="hero-line">This page <em>isn't</em> here.</h1>
+</header>
+<p class="hero-kicker"><a href="{{ config.base_url | safe }}">← index</a></p>
+{% endblock %}
