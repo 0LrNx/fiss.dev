@@ -1,7 +1,7 @@
 +++
-title = "First post"
-date = 2025-11-20
-description = "What this one is about, in a line"
+title = "Setup Vaultwarden (complete installation)"
+date = 2026-09-12
+description = "Complete writeup to installe Vaultwarden from the basic installation to the certification and use of own domain."
 +++
 
 The opening paragraph sets up the problem. Keep it short — the standfirst above
