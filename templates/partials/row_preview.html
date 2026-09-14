@@ -1,0 +1,60 @@
+{# Floating thumbnail shown while hovering an index row that has `extra.cover`.
+   Inert unless the device has a real pointer — see `.row-preview` in main.css. #}
+<div class="row-preview" data-row-preview aria-hidden="true">
+  <img alt="" decoding="async">
+</div>
+
+<script>
+  (function () {
+    var box = document.querySelector('[data-row-preview]');
+    if (!box) return;
+    if (!matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+
+    var img = box.querySelector('img');
+    var rows = document.querySelectorAll('.entry-link[data-cover]');
+    if (!rows.length) return;
+
+    // Warm the cache so the first hover doesn't show an empty frame.
+    requestAnimationFrame(function () {
+      rows.forEach(function (row) { new Image().src = row.dataset.cover; });
+    });
+
+    var x = 0, y = 0, queued = false, active = null;
+
+    function place() {
+      queued = false;
+      if (!active) return;
+      var w = box.offsetWidth, h = box.offsetHeight, pad = 16;
+      var left = Math.min(x + 24, innerWidth - w - pad);
+      var top = Math.min(Math.max(y - h / 2, pad), innerHeight - h - pad);
+      box.style.transform = 'translate3d(' + Math.round(left) + 'px,' + Math.round(top) + 'px,0)';
+    }
+
+    function track(e) {
+      x = e.clientX; y = e.clientY;
+      if (!queued) { queued = true; requestAnimationFrame(place); }
+    }
+
+    rows.forEach(function (row) {
+      row.addEventListener('pointerenter', function (e) {
+        if (e.pointerType !== 'mouse') return;
+        active = row;
+        if (img.getAttribute('src') !== row.dataset.cover) img.src = row.dataset.cover;
+        x = e.clientX; y = e.clientY;
+        place();
+        box.classList.add('is-on');
+      });
+      row.addEventListener('pointermove', track);
+      row.addEventListener('pointerleave', function () {
+        active = null;
+        box.classList.remove('is-on');
+      });
+    });
+
+    addEventListener('scroll', function () {
+      if (!active) return;
+      active = null;
+      box.classList.remove('is-on');
+    }, { passive: true });
+  })();
+</script>

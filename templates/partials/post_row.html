@@ -1,5 +1,12 @@
 <li class="entry">
   <a class="entry-link" href="{{ post.permalink | safe }}">
+    {% if post.extra.cover %}
+    <span class="entry-thumb">
+      <img src="{{ get_url(path=post.extra.cover) | safe }}" alt="" loading="lazy" decoding="async">
+    </span>
+    {% else %}
+    <span class="entry-thumb entry-thumb-empty" aria-hidden="true"></span>
+    {% endif %}
     <span class="entry-date">{{ post.date | date(format='%b %Y') }}</span>
     <span class="entry-name">{{ post.title }}</span>
     <span class="entry-blurb">{{ post.description | default(value="") }}</span>
