@@ -21,8 +21,8 @@ theme = "catppuccin-mocha"
 # ---------------------------------------------------------------------------
 
 name = "fiss"
-role = "Your role"
-since = "est. 20XX"
+role = "Software engineer & cyber interest"
+since = "est. 2025"
 
 # The word between *asterisks* is set in accent italic.
 hero = "A one-line statement, with *one word* that carries the accent."
